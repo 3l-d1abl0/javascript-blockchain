@@ -38,13 +38,13 @@ class Blockchain{
         return hashedBlock;
     }
 
-    proofOfWork(previousBlockhash, currentBlockData){
+    proofOfWork(previousBlockHash, currentBlockData){
         let nonce = 0;
-        let hash = this.blockHash(nonde, previousBlockhash, currentBlockData);
+        let hash = this.blockHash(nonce, previousBlockHash, currentBlockData);
         
         while(hash.substring(0,4)!=='0000'){
             nonce++;
-            hash = this.blockHash(node, previousBlockhash, currentBlockData);
+            hash = this.blockHash(nonce, previousBlockHash, currentBlockData);
         }
         console.log(previousBlockHash);
         console.log(currentBlockData);
