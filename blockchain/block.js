@@ -1,12 +1,12 @@
 class Block{
 
-    constructor(nonce, previousBlock, hash){
-        this.index : 0,
-        this.timestamp : Date.now(),
-        this.transactions: "",
+    constructor(idx, nonce, transactions, previousBlock, hash){
+        this.index = idx,
+        this.timestamp = Date.now(),
+        this.transactions= transactions,
         this.nonce = nonce,
         this.hash = hash,
-        this.previousBlock: previousBlock
+        this.previousBlock = previousBlock
     }
 }
 
