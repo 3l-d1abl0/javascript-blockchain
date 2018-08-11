@@ -46,9 +46,6 @@ class Blockchain{
             nonce++;
             hash = this.blockHash(nonce, previousBlockHash, currentBlockData);
         }
-        console.log(previousBlockHash);
-        console.log(currentBlockData);
-        console.log(nonce+' :: '+hash);
         return nonce;
     }
 }
