@@ -15,10 +15,12 @@ class Blockchain{
         return new Block(0,999,'someTranscatins','previousBlockHash','hash');
     }
 
-    newBlock(nonce, previousBlock, hash){
-        const block = new Block(this.chain.length, nonce, this.newTransactions, previousBlock, hash);
+    newBlock(nonce, previousBlockHash, hash){
+        const block = new Block(this.chain.length, nonce, this.newTransactions, previousBlockHash, hash);
         this.newTransactions =[]
         this.chain.push(block)
+
+        return block;
     }
 
     lastBlock(){
@@ -38,14 +40,15 @@ class Blockchain{
 
     proofOfWork(previousBlockhash, currentBlockData){
         let nonce = 0;
-        let hash = this.blockHash(previousBlockhash, currentBlockData, nonce);
+        let hash = this.blockHash(nonde, previousBlockhash, currentBlockData);
         
         while(hash.substring(0,4)!=='0000'){
             nonce++;
-            hash = this.blockHash(previousBlockhash, currentBlockData, nonce);
-            console.log(hash);
+            hash = this.blockHash(node, previousBlockhash, currentBlockData);
         }
-
+        console.log(previousBlockHash);
+        console.log(currentBlockData);
+        console.log(nonce+' :: '+hash);
         return nonce;
     }
 }
