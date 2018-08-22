@@ -13,7 +13,7 @@ Blockchain concepts - What is Blockchain and how it works !
 * [NodeJS](https://nodejs.org/)
 * [ExpressJS](https://expressjs.com/) - The web framework used
 
-## Authors
+## Author
 
 * **Sameer Barha**
 

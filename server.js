@@ -37,7 +37,9 @@ app.use((req, res, next)=>{
     });
 });
 
-const port = process.env.PORT || 8080;
+//const port = process.env.PORT || 8080;
+const port = process.argv[2];
+
 const server = http.createServer(app);
 
 server.on('listening', function(){

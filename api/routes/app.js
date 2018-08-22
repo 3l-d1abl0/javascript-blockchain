@@ -36,7 +36,7 @@ router.get('/mine-block', (req, res, next)=>{
     const nonce = bcoin.proofOfWork(previousBlockHash, currentBlock);
     //hash the current Block Data with the nonce Generated
     const hashBlock = bcoin.blockHash(nonce, previousBlockHash, currentBlock);
-    console.log(nonce+' :: '+hashBlock);
+
     //Reward the Miner //reward, senderMiningReward, networkNodeAddress
     bcoin.newTransaction(12.5,'miningRewardHash',nodeAddress);
 
