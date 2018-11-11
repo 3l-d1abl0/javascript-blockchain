@@ -1,6 +1,5 @@
 const path = require("path");
 const bunyan = require("bunyan");
-//const Mask = require("./mask");
 
 const level = process.env.NODE_LOGGING_LEVEL || "info";
 
@@ -18,5 +17,4 @@ const logger = bunyan.createLogger({
   ]
 });
 
-//module.exports = new Mask(log);
 module.exports = logger;

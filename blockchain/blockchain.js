@@ -1,6 +1,7 @@
 const Block = require('./block');
 const Transaction = require('./transaction');
 const sha256 = require('sha256');
+const currentNode = process.argv[3];
 
 
 class Blockchain{
@@ -8,17 +9,20 @@ class Blockchain{
     constructor(){
         this.newTransactions = [];
         this.chain = [this.genesis()];
+        this.currentNode = currentNode;
+        this.networkNodes = [];
     }
 
     genesis(){
+        //idx, nonce, transactions, previousBlock, hash
         //nonce previousBlock hash
-        return new Block(0,999,'someTranscatins','previousBlockHash','hash');
+        return new Block(0,999,'someTranscations','previousBlockHash','hash');
     }
 
     newBlock(nonce, previousBlockHash, hash){
         const block = new Block(this.chain.length, nonce, this.newTransactions, previousBlockHash, hash);
-        this.newTransactions =[]
-        this.chain.push(block)
+        this.newTransactions =[];
+        this.chain.push(block);
 
         return block;
     }
